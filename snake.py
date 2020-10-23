@@ -66,6 +66,9 @@ class Snake:
         """
         return self.snake_list
 
+    def get_score(self):
+        return self.snake_length - 1
+
     def eat_himself(self):
         """
         method used to make game over if snake is eating himself

@@ -37,6 +37,13 @@ class Main:
         r, g, b = color_list[0], color_list[1], color_list[2]
         return r, g, b
 
+    def score(self, score):
+        score_font = pygame.font.SysFont("comicsansms", 35)
+        value = score_font.render("Your Score: " + str(score),
+                                  True,
+                                  self.color_tuple(self.constant['yellow']))
+        self.window.blit(value, [0, 0])
+
     def play(self):
         """
         method for main game progression
@@ -52,7 +59,9 @@ class Main:
                     self.constant['win_height'],
                     self.constant['snake_block'])
         clock = pygame.time.Clock()
+
         game_over = False
+        snake_speed = self.constant['snake_speed']
 
         # loop game
         while not game_over:
@@ -102,6 +111,7 @@ class Main:
                             self.constant['win_height'],
                             self.constant['snake_block'])
                 snake.grow_up()
+                snake_speed += 1
 
             # update snake displaying
             for x in snake.list():
@@ -112,11 +122,13 @@ class Main:
                                   self.constant['snake_block'],
                                   self.constant['snake_block']])
 
+            self.score(snake.get_score())
+
             # game updated
             pygame.display.update()
 
             # game speed
-            clock.tick(self.constant['snake_speed'])
+            clock.tick(snake_speed)
 
         pygame.quit()
         quit()
