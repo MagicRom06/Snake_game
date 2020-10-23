@@ -11,5 +11,5 @@ A snake game using pygame module
 ## Installation
 - Git clone https://github.com/MagicRom06/Snake_game.git.
 - Enable virtual env == pipenv shell.
-- Install requirement ==> pipenv shell update.
+- Install requirement ==> pipenv update.
 - Launch the game ==> python start.py.
