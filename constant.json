@@ -1,0 +1,13 @@
+{
+  "win_width": 800,
+  "win_height": 600,
+
+  "blue": [50, 153, 213],
+  "red": [255, 0, 0],
+  "white": [255, 255, 255],
+  "black": [0, 0, 0],
+  "green" : [0, 255, 0],
+
+  "snake_block" : 10,
+  "snake_speed": 15
+}
