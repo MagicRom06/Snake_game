@@ -59,6 +59,12 @@ class Snake:
         """
         return self.y
 
+    def get_score(self):
+        """
+        get score
+        """
+        return self.snake_length - 1
+
     def list(self):
         """
         get snake list
